@@ -1,0 +1,143 @@
+<!DOCTYPE html> 
+<html>
+<head>
+ 
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+<link rel="stylesheet" href="style.css"> 
+
+
+   
+   
+    <h1 id="name">Albandry AlQaseemi</h1><br><hr>
+
+    <body>
+        
+        <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Hot Coffee</th>
+                <th scope="col">Ice Coffee</th>
+                <th scope="col">Remove</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>Cappuccino</td>
+                <td>Spanish Latte</td>
+                <td><strong>Main</strong></td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>Flat White</td>
+                <td>Latte</td>
+                <td><strong>Main</strong></td>
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td>Cortado</td>
+                <td>V60</td>
+                <td><strong>Main</strong></td>
+              </tr>
+            </tbody>
+            <tbody></tbody>
+          </table>
+          <br> 
+       
+         <label style="color: darkolivegreen;">Hot Coffee</label>
+         <input type="text" style="display:inline-table; margin: auto;" id="HotName">
+         
+         <label  style="color: darkolivegreen;">Ice Coffee</label>
+         <input type="text" style="display:inline-table; margin: auto;" id="IceName">
+
+         <button id="insert" class="btn btn-secondary btn-sm" >Add Coffee</button>
+        
+         <br>
+         <br>
+         <br>
+
+         <img src="IMG_4982.jpg" class="rounded float-left" alt="MyShot">
+         <img src="IMG_5269.jpg" class="rounded float-right" alt="MyShot">
+         <img src="IMG_5466.jpg" class="rounded float-left" alt="MyShot">
+         <img src="IMG_6546.jpg" class="rounded float-right" alt="MyShot">
+            <br>
+            <br>
+
+        <h2 >What is coffee?</h2><br>
+        <p>Everyone recognizes a roasted coffee bean, but you might not recognize an actual coffee plant.
+
+            White flowers on coffee tree
+            Coffee trees are pruned short to conserve their energy and aid in harvesting, but can grow to more than 30 feet (9 meters) high. Each tree is covered with green, waxy leaves growing opposite each other in pairs. Coffee cherries grow along the branches. Because it grows in a continuous cycle, it’s not unusual to see flowers, green fruit and ripe fruit simultaneously on a single tree.
+            
+            It takes nearly a year for a cherry to mature after first flowering, and about 5 years of growth to reach full fruit production. While coffee plants can live up to 100 years, they are generally the most productive between the ages of 7 and 20. Proper care can maintain and even increase their output over the years, depending on the variety. The average coffee tree produces 10 pounds of coffee cherry per year, or 2 pounds of green beans.
+            
+            All commercially grown coffee is from a region of the world called the Coffee Belt. The trees grow best in rich soil, with mild temperatures, frequent rain and shaded sun.</p>
+      
+    
+        <button id="button" class="btn btn-secondary btn-sm">Add Sweet</button>
+        
+         <input type="text"  id="txtName">
+         <br>
+         <br>
+
+        <ul id="list">
+
+            <li>Dounts</li>
+            <li>Cookies</li>
+
+        </ul>
+
+        <script src="./main.js"></script>
+        <script>
+
+
+            let button = document.querySelector("#button")
+            let list = document.querySelector("#list")
+            let input = document.querySelector("#txtName")
+           
+            button.addEventListener("click", () => {
+            if (input.value.length > 3) {
+                
+                let li = document.createElement("li");
+                li.innerText = input.value
+                input.value = ""
+                let span = document.createElement("span");
+
+                li.addEventListener("click", () => {
+                    if (!li.contains(span)) {
+                        span.innerText = " X"
+                        span.style.color = "red"
+                        li.style.textDecoration = "line-through"
+
+                span.addEventListener("click", () => {
+                        span.parentNode.remove()
+                        })
+
+                        li.appendChild(span);
+                    } else {
+                        span.remove()
+                       
+                        li.style.textDecoration = "none"
+                    }
+
+                })
+
+                list.appendChild(li);
+
+            } else {
+            
+                console.log("not enough char")
+            }
+
+        })
+            
+            </script>
+
+    </body>
+</head>
+
+
+
+
+</html>
